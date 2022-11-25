@@ -1,7 +1,7 @@
 MDCode
 ******
 
-MDCode is a high-throughput molecular dynamics program based on the ASE and ASAP libraries. It is realized as a group project for the 2021 course "Collaborative Software Engineering Project in Computational Physics" at LiU.
+MDCode is a high-throughput molecular dynamics program based on the ASE and ASAP libraries. It is was started as a group project for the 2021 course "Collaborative Software Engineering Project in Computational Physics" at LiU and, in this version, continued as a solo project.
 
 User's Guide
 ============
