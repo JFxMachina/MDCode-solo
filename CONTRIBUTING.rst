@@ -14,8 +14,8 @@ Git Workflow
 ============
 
 The MDCode project uses a `Shared Repository Model <https://docs.github.com/en/github/collaborating-with-pull-requests/getting-started/about-collaborative-development-models>`_.
-Contributors can open different branches (e.g. feature, bugfix, experimental) of this repository and commit on, push to, pull from them. Once their work on said branch is done, a `Pull Request <https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_ is submitted to merge into the development (`dev <https://github.com/JFxMachina/MDCode/dev>`_) branch.
-Pull requests for the `dev <https://github.com/JFxMachina/MDCode/dev>`__ branch require at least two reviews to be accepted. Pull requests into the `main <https://github.com/JFxMachina/MDCode/main>`__ are only allowd from the `dev <https://github.com/JFxMachina/MDCode/dev>`__ branch and require at least three reviews to be accepeted. 
+Contributors can open different branches (e.g. feature, bugfix, experimental) of this repository and commit on, push to, pull from them. Once their work on said branch is done, a `Pull Request <https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_ is submitted to merge into the development (`dev <https://github.com/JFxMachina/MDCode-solo/dev>`_) branch.
+Pull requests for the `dev <https://github.com/JFxMachina/MDCode-solo/dev>`__ branch require at least two reviews to be accepted. Pull requests into the `main <https://github.com/JFxMachina/MDCode-solo/main>`__ are only allowd from the `dev <https://github.com/JFxMachina/MDCode-solo/dev>`__ branch and require at least three reviews to be accepeted. 
 
 Branching
 ---------
@@ -46,8 +46,8 @@ Commit messages should be as short as possible while still adequately describing
 Pull Requests
 -------------
 
-Pull requests into the `dev <https://github.com/JFxMachina/MDCode/dev/>`__ branch should (generally) only be issued once work on one or more issues is complete. They will generally only be granted once all tests are passed and the changes have been reviewed by two individual contributors (Exceptions can be made).
-Pull requests into the `main <https://github.com/JFxMachina/MDCode/main/>`__ branch are only accepted from the dev branch and require reviews by three individual contributors.
+Pull requests into the `dev <https://github.com/JFxMachina/MDCode-solo/dev/>`__ branch should (generally) only be issued once work on one or more issues is complete. They will generally only be granted once all tests are passed and the changes have been reviewed by two individual contributors (Exceptions can be made).
+Pull requests into the `main <https://github.com/JFxMachina/MDCode-solo/main/>`__ branch are only accepted from the dev branch and require reviews by three individual contributors.
 
 If the pull request closes some issue, it should be marked in the message.
 
