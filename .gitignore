@@ -17,6 +17,9 @@ data/*/
 gtag.sh
 tutorials/
 
+# Temporary files from testing
+tests/db/*.sqlite3
+
 # =From_Template=======================
 
 # Byte-compiled / optimized / DLL files
