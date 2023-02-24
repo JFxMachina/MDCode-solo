@@ -1,12 +1,23 @@
-# VSCode
-*/.vscode/
-.vscode/
+# =Project_Specific====================
 
-# Custom
-gtag.sh
+# Secrets
+*.key
+
+# Data
+data/*/
 
 # ASE specific
 *.traj
+
+# VSCode configuration
+*/.vscode/
+.vscode/
+
+# Various
+gtag.sh
+tutorials/
+
+# =From_Template=======================
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
