@@ -103,7 +103,10 @@ def load_materials(
                 #         ]
             df_summary = pd.DataFrame([mat.__dict__ for mat in summary])
             df_materials = pd.DataFrame([mat.__dict__ for mat in materials])
-        
+            df_summary.sort_values("material_id", inplace=True)
+            df_materials.sort_values("material_id", inplace=True)
+
+
         if "sqlitedict" in sys.modules and len(cache_file) > 0:
             try:
                 with SqliteDict(cache_file) as c_dict:

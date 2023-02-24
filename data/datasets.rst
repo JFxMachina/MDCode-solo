@@ -12,7 +12,7 @@ A dataset comprised of 86k transition metal-organic compunds which is freely ava
 The geometry and composition of each component are listed in using the .xyz file format,
 and a number of computed properties are listed in an accompanying .csv file.
 
-This dataset was initially considered for initial tests, however the properties investigated by the authors cannot be computed using a molecular dynamics apporach, thus a different dataset had to be chosen.
+This dataset was initially considered for initial tests, however the properties investigated by the authors cannot be computed using a classical molecular dynamics apporach, thus a different dataset had to be chosen.
 
 
 Materials Project

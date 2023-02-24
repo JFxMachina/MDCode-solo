@@ -30,6 +30,7 @@ jobs:
         pip install flake8 pytest wheel numpy scipy ase
         pip install asap3
         pip install mp-api
+        pip install sqlitedict
 #       pip install kimpy
 #       pip install mpcontribs-client
 #       pip install optimade[http_client]
