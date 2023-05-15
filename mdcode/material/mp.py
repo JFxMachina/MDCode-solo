@@ -3,8 +3,14 @@
 
 import sys
 from os import environ
-from mp_api.client import MPRester
 import pandas as pd
+
+from mp_api.client import MPRester
+from pymatgen.io.ase import AseAtomsAdaptor
+
+def get_atoms(material):
+    atoms = AseAtomsAdaptor.get_atoms(material.structure)
+    return atoms
 
 def load_materials(
         elements,
@@ -22,7 +28,9 @@ def load_materials(
     instead (In this case <elements> and <nelements> is ignored,
     except if override is also set to true).
 
-    Caching requires the sqlitedict python package.
+    Caching is done to avoid unnecessary Materials Project API calls,
+    especially during development/testing and requires the sqlitedict
+    python package.
 
     Args:
         elements (List(str)): List of elements.
