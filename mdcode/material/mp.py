@@ -8,6 +8,13 @@ import pandas as pd
 from mp_api.client import MPRester
 from pymatgen.io.ase import AseAtomsAdaptor
 
+def get_elements(materials):
+    elements = set()
+    for material in materials.iterrows():
+        elements.update(material.elements)
+    #return [element.name for element in elements]
+    return elements
+
 def get_atoms(material):
     atoms = AseAtomsAdaptor.get_atoms(material.structure)
     return atoms

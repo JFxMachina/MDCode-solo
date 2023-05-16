@@ -13,17 +13,6 @@ from ase.io import Trajectory
 # For OpenKim models/potentials
 from ase.calculators.kim.kim import KIM
 
-# For loading MP materials
-from mdcode.db.mp import load_materials
-from pymatgen.io.ase import AseAtomsAdaptor
-
-size = 10
-
-def setup_atoms():
-    summary, materials = load_materials(["Ti"], (1,1), cache_key="Ti")
-    atoms = AseAtomsAdaptor.get_atoms(materials.structure[6])
-    return atoms*(10,10,10)
-
 def calcenergy(atoms):
     """Calculate the potential, kinetic and total energy per atom."""
     epot = atoms.get_potential_energy() / len(atoms)
@@ -32,7 +21,7 @@ def calcenergy(atoms):
     etot = epot + ekin
     return (epot, ekin, Tinst, etot)
 
-def run_md(atoms, output_filename="out.traj"):
+def run_md(atoms, potential, output_filename="out.traj"):
     """Run an example MD simulation for a Cu fcc crystal."""
 
     # Universal
@@ -45,6 +34,8 @@ def run_md(atoms, output_filename="out.traj"):
     # atoms.calc = KIM('MEAM_LAMMPS_AlmyrasSangiovanniSarakinos_2019_NAlTi__MO_958395190627_002')
     # atoms.calc = KIM('MEAM_LAMMPS_KimLee_2008_TiN__MO_070542625990_002')
     # atoms.calc = KIM('MEAM_LAMMPS_MirazDhariwalMeng_2020_CuNTi__MO_122936827583_002')
+
+    atoms.calc = KIM(potential)
 
     # Set the momenta corresponding to T=300K
     MaxwellBoltzmannDistribution(atoms, temperature_K=300)
@@ -67,5 +58,8 @@ def run_md(atoms, output_filename="out.traj"):
 
 
 if __name__ == "__main__":
-    atoms = setup_atoms()
+    from mdcode.material.mp import load_materials, get_atoms
+    potential = 'EAM_Dynamo_ZhouJohnsonWadley_2004NISTretabulation_Ti__MO_101966451181_000'
+    summaries, materials = load_materials(["Ti","N"],(2,2),override=True)
+    atoms = get_atoms(materials.loc[0])
     run_md(atoms)

@@ -27,11 +27,11 @@ def scale(atoms, target_natoms=1000) -> Atoms:
     natoms = len(atoms)
     ratio = pow(target_natoms/natoms, 1/3)
     ls = atoms.cell.lengths()
-    ls[:] = 1 # FIXME
+    #ls[:] = 1 # FIXME
     l = pow(ls.prod(), 1/3)
     rs = np.zeros_like(ls, dtype=int)
     rcum = ratio
     for i in np.flip(ls.argsort()):
-        rs[i] = ceil(rcum*l/ls[i])
+        rs[i] = ceil(rcum)
         rcum *= ratio/rs[i]
     return atoms*tuple(rs)
